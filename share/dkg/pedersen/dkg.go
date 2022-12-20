@@ -253,6 +253,9 @@ func NewDistKeyGenerator(suite Suite, longterm kyber.Scalar, participants []kybe
 	return NewDistKeyHandler(c)
 }
 
+// Commits returns the commitments of the coefficient of the secret polynomial the Dealer is sharing.
+func (d *DistKeyGenerator) Commits() []kyber.Point { return d.dealer.Commits() }
+
 // Deals returns all the deals that must be broadcasted to all participants in
 // the new list. The deal corresponding to this DKG is already added to this DKG
 // and is ommitted from the returned map. To know which participant a deal
