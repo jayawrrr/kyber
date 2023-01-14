@@ -670,6 +670,10 @@ func (a *Aggregator) Responses() map[uint32]*Response {
 	return a.responses
 }
 
+func (a *Aggregator) SetTimeout() {
+	a.timeout = true
+}
+
 // DealCertified returns true if the deal is certified.
 // For a deal to be certified, it needs to comply to the following
 // conditions in two different cases, since we are not working with the
