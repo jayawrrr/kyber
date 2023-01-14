@@ -628,6 +628,10 @@ func (a *Aggregator) verifyResponse(r *Response) error {
 	return a.addResponse(r)
 }
 
+func (a *Aggregator) ProcessJustification(j *Justification) error {
+	return a.verifyJustification(j)
+}
+
 func (a *Aggregator) verifyJustification(j *Justification) error {
 	if _, ok := findPub(a.verifiers, j.Index); !ok {
 		return errors.New("vss: index out of bounds in justification")
